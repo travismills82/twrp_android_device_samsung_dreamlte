@@ -1,0 +1,117 @@
+dreamlte:/ # cat /proc/partitions
+major minor  #blocks  name
+
+   1        0       8192 ram0
+   1        1       8192 ram1
+   1        2       8192 ram2
+   1        3       8192 ram3
+   1        4       8192 ram4
+   1        5       8192 ram5
+   1        6       8192 ram6
+   1        7       8192 ram7
+   1        8       8192 ram8
+   1        9       8192 ram9
+   1       10       8192 ram10
+   1       11       8192 ram11
+   1       12       8192 ram12
+   1       13       8192 ram13
+   1       14       8192 ram14
+   1       15       8192 ram15
+   8        0   62464000 sda
+   8        1       4096 sda1
+   8        2       4096 sda2
+   8        3      20480 sda3
+   8        4       8192 sda4
+   8        5       8192 sda5
+   8        6       8192 sda6
+   8        7      40960 sda7
+   8        8      47104 sda8
+   8        9       8192 sda9
+   8       10      43008 sda10
+   8       11       1024 sda11
+   8       12       1024 sda12
+   8       13        512 sda13
+   8       14       1024 sda14
+   8       15       4096 sda15
+ 259        0      16384 sda16
+ 259        1    4454400 sda17
+ 259        2     512000 sda18
+ 259        3      10240 sda19
+ 259        4      51200 sda20
+ 259        5       5120 sda21
+ 259        6      20480 sda22
+ 259        7       1024 sda23
+ 259        8   57184256 sda24
+   8       16       4096 sdb
+   8       32       8192 sdc
+   8       48       8192 sdd
+   8       49       6144 sdd1
+ 253        0    2097152 vnswap0
+ 179        0  125565952 mmcblk0
+ 179        1  125549568 mmcblk0p1
+   7       64      65536 loop64
+
+dreamlte:/ # ls -l /dev/block/platform/11120000.ufs/by-name/
+total 0
+lrwxrwxrwx 1 root root 15 2019-01-29 21:52 BOOT -> /dev/block/sda7
+lrwxrwxrwx 1 root root 15 2019-01-29 21:52 BOTA0 -> /dev/block/sda1
+lrwxrwxrwx 1 root root 15 2019-01-29 21:52 BOTA1 -> /dev/block/sda9
+lrwxrwxrwx 1 root root 15 2019-01-29 21:52 BOTA2 -> /dev/block/sda6
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 CACHE -> /dev/block/sda18
+lrwxrwxrwx 1 root root 15 2019-01-29 21:52 CPEFS -> /dev/block/sdd1
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 CP_DEBUG -> /dev/block/sda21
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 DNT -> /dev/block/sda12
+lrwxrwxrwx 1 root root 15 2019-01-29 21:52 EFS -> /dev/block/sda3
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 HIDDEN -> /dev/block/sda19
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 KEYREFUGE -> /dev/block/sda16
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 MISC -> /dev/block/sda14
+lrwxrwxrwx 1 root root 15 2019-01-29 21:52 NA -> /dev/block/sda2
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 NAD_FW -> /dev/block/sda22
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 NAD_REFER -> /dev/block/sda23
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 OMR -> /dev/block/sda20
+lrwxrwxrwx 1 root root 15 2019-01-29 21:52 PARAM -> /dev/block/sda4
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 PERSISTENT -> /dev/block/sda13
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 RADIO -> /dev/block/sda10
+lrwxrwxrwx 1 root root 15 2019-01-29 21:52 RECOVERY -> /dev/block/sda8
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 STEADY -> /dev/block/sda15
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 SYSTEM -> /dev/block/sda17
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 TOMBSTONES -> /dev/block/sda11
+lrwxrwxrwx 1 root root 15 2019-01-29 21:52 UP_PARAM -> /dev/block/sda5
+lrwxrwxrwx 1 root root 16 2019-01-29 21:52 USERDATA -> /dev/block/sda24
+
+dreamlte:/ # fdisk -l /dev/block/sda                                           
+Note: sector size is 4096 (not 512)
+Found valid GPT with protective MBR; using GPT
+
+Disk /dev/block/sda: 124928000 sectors,  576M
+Logical sector size: 4096
+Disk identifier (GUID): 52444e41-494f-2044-4d4d-43204449534b
+Partition table holds up to 128 entries
+First usable sector is 6, last usable sector is 15615994
+
+Number  Start (sector)    End (sector)  Size Name
+     1            1024            2047 4096K BOTA0
+     2            2048            3071 4096K NA
+     3            3072            8191 20.0M EFS
+     4            8192           10239 8192K PARAM
+     5           10240           12287 8192K UP_PARAM
+     6           12288           14335 8192K BOTA2
+     7           14336           24575 40.0M BOOT
+     8           24576           36351 46.0M RECOVERY
+     9           36352           38399 8192K BOTA1
+    10           38400           49151 42.0M RADIO
+    11           49152           49407 1024K TOMBSTONES
+    12           49408           49663 1024K DNT
+    13           49664           49791  512K PERSISTENT
+    14           49792           50047 1024K MISC
+    15           50048           51071 4096K STEADY
+    16           51072           55167 16.0M KEYREFUGE
+    17           55168         1168767 4350M SYSTEM
+    18         1168768         1296767  500M CACHE
+    19         1296768         1299327 10.0M HIDDEN
+    20         1299328         1312127 50.0M OMR
+    21         1312128         1313407 5120K CP_DEBUG
+    22         1313408         1318527 20.0M NAD_FW
+    23         1318528         1318783 1024K NAD_REFER
+    24         1318784        15614847 54.5G USERDATA
+
