@@ -54,6 +54,13 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 -
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Android Verified Boot
+BOARD_AVB_ENABLE := false
+BOARD_BUILD_DISABLED_VBMETAIMAGE := true
+
+# Workaround for error copying vendor files to recovery ramdisk
+TARGET_COPY_OUT_VENDOR := vendor
+
 # TWRP specific build flags
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
